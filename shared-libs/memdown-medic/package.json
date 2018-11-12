@@ -1,7 +1,7 @@
 {
-  "name": "memdown-medic",
+  "name": "@shared-libs/memdown-medic",
   "version": "1.0.0",
-  "private": "true",
+  "private": true,
   "description": "PouchDB instance populated with ddocs",
   "main": "src/memdown-medic.js",
   "scripts": {},

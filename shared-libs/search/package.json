@@ -1,6 +1,7 @@
 {
-  "name": "search",
+  "name": "@shared-libs/search",
   "version": "1.1.0",
+  "private": true,
   "description": "Our implemenation of search using (C|P)ouchDB views.",
   "main": "src/search.js",
   "scripts": {
@@ -9,9 +10,6 @@
   "author": "",
   "license": "Apache-2.0",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0",
-    "sinon": "^6.1.5"
   },
   "dependencies": {
     "moment": "^2.22.2",

@@ -6,7 +6,7 @@ const _ = require('underscore'),
   settingsService = require('./services/settings'),
   translationCache = {},
   logger = require('./logger'),
-  viewMapUtils = require('view-map-utils');
+  viewMapUtils = require('@shared-libs/view-map-utils');
 
 let settings = {};
 

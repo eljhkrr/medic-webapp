@@ -2,8 +2,8 @@ const db = require('../db-pouch'),
       auth = require('../auth'),
       _ = require('underscore'),
       config = require('../config'),
-      viewMapUtils = require('view-map-utils'),
-      tombstoneUtils = require('tombstone-utils');
+      viewMapUtils = require('@shared-libs/view-map-utils'),
+      tombstoneUtils = require('@shared-libs/tombstone-utils');
 
 const ALL_KEY = '_all', // key in the docs_by_replication_key view for records everyone can access
       UNASSIGNED_KEY = '_unassigned'; // key in the docs_by_replication_key view for unassigned records
