@@ -50,7 +50,7 @@ script:
       node --stack_size=10000 `which grunt` ci-performance
     elif [[ "$TEST_SUITE" = 'standard' ]]; then
       cd config/standard &&
-      npm install &&
+      npm ci &&
       npm run travis
     else
       echo "ERROR No or unknown value for TEST_SUITE env var ('${TEST_SUITE}')."
