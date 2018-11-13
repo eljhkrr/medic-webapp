@@ -422,8 +422,9 @@ module.exports = function(grunt) {
       },
       'start-webdriver': {
         cmd:
-          'npm webdriver-manager update && ' +
-          'npm webdriver-manager start > tests/logs/webdriver.log & ' +
+          'mkdir -p tests/logs && ' +
+          './node_modules/.bin/webdriver-manager update && ' +
+          './node_modules/.bin/webdriver-manager start > tests/logs/webdriver.log & ' +
           'until nc -z localhost 4444; do sleep 1; done',
       },
       'check-env-vars':
