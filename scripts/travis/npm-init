@@ -14,5 +14,5 @@ npm ls || true
 node --version
 npm --version
 cd shared-libs/phone-number && npm install && cd ../..
-cd webapp && npm install && cd ..
+cd webapp && rm package-lock.json && npm install && cd ..
 node --stack_size=10000 `which grunt` ci-build
