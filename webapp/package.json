@@ -61,6 +61,7 @@
     "**/moment": "^2.22.2"
   },
   "bundledDependencies": [
+    "gsm",
     "@shared-libs/bulk-docs-utils"
   ]
 }
