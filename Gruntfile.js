@@ -334,7 +334,8 @@ module.exports = function(grunt) {
             [
               `cd ${module}`,
               `rm -rf node_modules`,
-              `npm install --production`,
+              `rm package-lock.json`, 
+	      `npm install --production`,
               `npm pack`,
               `mv medic-*.tgz ../build/ddocs/medic/_attachments/`,
               `cd ..`,
@@ -417,13 +418,14 @@ module.exports = function(grunt) {
       },
       'npm-install': {
         cmd: ['webapp', 'api', 'sentinel', 'admin']
-          .map(dir => `echo "[${dir}]" && cd ${dir} && npm install && cd ..`)
+          .map(dir => `echo "[${dir}]" && cd ${dir} && rm package-lock.json && npm install && cd ..`)
           .join(' && '),
       },
       'start-webdriver': {
         cmd:
-          'npm webdriver-manager update && ' +
-          'npm webdriver-manager start > tests/logs/webdriver.log & ' +
+          'mkdir -p tests/logs && ' +
+          './node_modules/.bin/webdriver-manager update && ' +
+          './node_modules/.bin/webdriver-manager start > tests/logs/webdriver.log & ' +
           'until nc -z localhost 4444; do sleep 1; done',
       },
       'check-env-vars':

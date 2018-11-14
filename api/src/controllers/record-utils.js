@@ -1,6 +1,6 @@
 const _ = require('underscore'),
       moment = require('moment'),
-      phoneNumber = require('phone-number'),
+      phoneNumber = require('@shared-libs/phone-number'),
       config = require('../config'),
       smsparser = require('../services/report/smsparser'),
       validate = require('../services/report/validate'),
