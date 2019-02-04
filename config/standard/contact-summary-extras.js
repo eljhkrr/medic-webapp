@@ -274,7 +274,9 @@ var isSingleDose = function(name) {
 // modified to exclude invalid reports, which is common with SMS reports
 function countReportsSubmittedInWindow(form, end) {
   return count(reports, function(r) {
-    return r.reported_date <= end && form.indexOf(r.form) !== -1;
+    if (r.form == 'pregnancy_visit'){
+      return r.fields && r.fields.visit_confirmed == 'yes' && r.reported_date <= end && form.indexOf(r.form) !== -1;
+    } else return r.reported_date <= end && form.indexOf(r.form) !== -1;
   });
 }
 
@@ -367,7 +369,7 @@ function getNewestPncPeriod() {
 
 function getSubsequentVisits(r) {
   var subsequentVisits = reports.filter(function(v) {
-    return (v.form === 'pregnancy_visit' || v.form === 'V') && v.reported_date > r.reported_date;
+    return ((v.form === 'pregnancy_visit' && v.fields && v.fields.visit_confirmed == 'yes') || v.form === 'V') && v.reported_date > r.reported_date;
   });
   return subsequentVisits;
 }
